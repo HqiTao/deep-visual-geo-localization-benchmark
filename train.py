@@ -91,10 +91,7 @@ if args.resume:
 else:
     best_r5 = start_epoch_num = not_improved_num = 0
 
-if args.backbone.startswith('vit'):
-    logging.info(f"Output dimension of the model is {args.features_dim}")
-else:
-    logging.info(f"Output dimension of the model is {args.features_dim}, with {util.get_flops(model, args.resize)}")
+logging.info(f"Output dimension of the model is {args.features_dim}")
 
 
 if torch.cuda.device_count() >= 2:
